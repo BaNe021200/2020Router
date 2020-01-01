@@ -16,16 +16,17 @@ class FrontController extends AbstractController
      */
     private $twig;
 
-    private function init(){
+    private function init()
+    {
         return new Twig();
     }
+
     /**
      * @return mixed
      */
     public function index()
     {
         return ($this->init())->twigRender('pages/index.html.twig');
-
 
 
     }
@@ -35,19 +36,39 @@ class FrontController extends AbstractController
         return ($this->init())->twigRender('pages/home.html.twig');
     }
 
+    public function pseudoUpload($lady)
+    {
+        $imgs = glob('../public/images/'.$lady.'/*.jpg');
+        $images = [];
+        foreach ($imgs as $img) {
+            $infos = pathinfo($img);
+            $images[] = $infos;
+        }
+        return $images;
+    }
+
     public function maria()
     {
 
-        $imgs = glob('../public/images/*.jpg');
-        $images = [];
-        foreach ($imgs as $img) {
-           $infos= pathinfo($img);
-           $images[]= $infos;
-        }
+        $images = $this->pseudoUpload('maria');
 
-        return ($this->init())->twigRender('pages/maria.html.twig',[
-            'images'=>$images
+        return ($this->init())->twigRender('pages/maria.html.twig', [
+            'images' => $images,
+            'lady' => 'maria'
 
         ]);
     }
+
+    public function seniors()
+    {
+        $images = $this->pseudoUpload('seniors');
+
+        return $this->init()->twigRender('pages/seniors.html.twig',[
+            'images' => $images,
+            'lady'=> 'seniors'
+        ]);
+
+    }
+
+
 }

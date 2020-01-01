@@ -10,3 +10,7 @@ home:
 yelloLily.maria:
     path: /yellowLily/maria
     controller: App\Controller\FrontController::maria
+
+yelloLily.seniors:
+    path: /yellowLily/seniors
+    controller: App\Controller\FrontController::seniors

@@ -40,6 +40,10 @@ try {
         {
             $frontController->maria();
         }
+        elseif ($context->getPathInfo()==='/yellowLily/seniors')
+        {
+            $frontController->seniors();
+        }
 
     } else {
         throw new ResourceNotFoundException('404');
