@@ -16,7 +16,7 @@ use Symfony\Component\Routing\Route;
 $frontController = new FrontController();
 try {
 
-    $fileLocator = new FileLocator([__DIR__]);
+    $fileLocator = new FileLocator(['../config']);
     $loader = new YamlFileLoader($fileLocator);
     $routes = $loader->load('routes.yaml');
 

@@ -24,7 +24,7 @@ class FrontController extends AbstractController
      */
     public function index()
     {
-        return ($this->init())->twigInit('pages/index.html.twig');
+        return ($this->init())->twigRender('pages/index.html.twig');
 
 
 
@@ -32,6 +32,6 @@ class FrontController extends AbstractController
 
     public function home()
     {
-        return ($this->init())->twigInit('pages/home.html.twig');
+        return ($this->init())->twigRender('pages/home.html.twig');
     }
 }

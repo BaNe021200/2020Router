@@ -9,13 +9,13 @@ use Twig\Loader\FilesystemLoader;
 
 class Twig
 {
-    public function twigInit(string $path, array $arguments=[])
+    public function twigRender(string $view, array $arguments=[])
     {
         $loader = new FilesystemLoader('../templates');
         $twig = new Environment($loader,[
             'cache'=>'../../tmp',
         ]);
 
-        echo $twig->render($path,$arguments);
+        echo $twig->render($view,$arguments);
     }
 }
