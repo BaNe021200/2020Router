@@ -6,6 +6,7 @@ namespace App\Services;
 
 use Twig\Environment;
 use Twig\Loader\FilesystemLoader;
+use Twig\TwigFunction;
 
 class Twig
 {
@@ -13,8 +14,11 @@ class Twig
     {
         $loader = new FilesystemLoader('../templates');
         $twig = new Environment($loader,[
-            'cache'=>'../../tmp',
+            'cache'=>false,//'../tmp',
         ]);
+        $twig->addFunction(new TwigFunction('asset',function ($asset){
+            return sprintf('../%s', ltrim($asset, '/'));
+        }));
 
         echo $twig->render($view,$arguments);
     }

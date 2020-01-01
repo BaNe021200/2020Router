@@ -1,0 +1,15 @@
+{% for image in images %}
+
+
+<div class="card" >
+    <a href={{ asset('images/'~image.basename) }}> <img src="{{ asset('images/cards/'~ image.basename ) }}" alt="" width="auto" class="card-img-top"></a>
+
+    <div class="card-body">
+       {# <h5 class="card-title">{{ image.basename }}</h5>#}
+
+
+        <p class="text text-muted">{{ image.filename }}</p>
+    </div>
+</div>
+
+{% endfor %}

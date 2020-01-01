@@ -25,7 +25,6 @@ try {
 
     $matcher = new UrlMatcher($routes, $context);
     $matcher->match($context->getPathInfo());
-dump($context->getPathInfo());
 
     if ($matcher != false) {
 
@@ -36,6 +35,10 @@ dump($context->getPathInfo());
         elseif ($context->getPathInfo()==='/home')
         {
             $frontController->home();
+        }
+        elseif ($context->getPathInfo()==='/yellowLily/maria')
+        {
+            $frontController->maria();
         }
 
     } else {

@@ -5,3 +5,8 @@ index:
 home:
     path: /home
     controller: App\Controller\FrontController::home
+
+
+yelloLily.maria:
+    path: /yellowLily/maria
+    controller: App\Controller\FrontController::maria

@@ -34,4 +34,20 @@ class FrontController extends AbstractController
     {
         return ($this->init())->twigRender('pages/home.html.twig');
     }
+
+    public function maria()
+    {
+
+        $imgs = glob('../public/images/*.jpg');
+        $images = [];
+        foreach ($imgs as $img) {
+           $infos= pathinfo($img);
+           $images[]= $infos;
+        }
+
+        return ($this->init())->twigRender('pages/maria.html.twig',[
+            'images'=>$images
+
+        ]);
+    }
 }
