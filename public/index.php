@@ -26,6 +26,10 @@ try {
     $matcher = new UrlMatcher($routes, $context);
     $matcher->match($context->getPathInfo());
 
+
+
+
+
     if ($matcher != false) {
 
         if ($context->getPathInfo()==='/')
@@ -39,11 +43,26 @@ try {
         elseif ($context->getPathInfo()==='/yellowLily/maria')
         {
             $frontController->maria();
+
+
         }
+
+        /*elseif ((new UrlGenerator($routes,$context))->generate('yelloLily.maria'))
+        {
+
+            $frontController->maria();
+        }*/
+
         elseif ($context->getPathInfo()==='/yellowLily/seniors')
         {
             $frontController->seniors();
         }
+
+        /*elseif ((new UrlGenerator($routes, $context))->generate('yelloLily.seniors'))
+        {
+
+            $frontController->seniors();
+        }*/
 
     } else {
         throw new ResourceNotFoundException('404');

@@ -1,12 +1,12 @@
 {% extends "base.html.twig" %}
 
-{% block body %}
-    <h1>
-        <span class="text-primary">H</span>
-        <span class="text-danger">o</span>
-        <span class="text-warning">m</span>
-        <span class="text-success">e</span>
 
-     </h1>
+{% block body %}
+    <h1 class="text-center">
+        {% set letters = letters('Home') %}
+        {% include 'components/_google_letters.html.twig' %}
+    </h1>
+
+
 {% endblock body %}
 

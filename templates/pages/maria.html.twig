@@ -2,6 +2,15 @@
 
 {% block body %}
     <div class="container mt-4">
+        
+        <h1 class="text-center mb-5">
+           {% set letters = letters('Maria')%}
+            {% include 'components/_google_letters.html.twig' %}
+        </h1>
+        
         <div class="grid"> {% include 'components/_card.html.twig' %}</div>
     </div>
 {% endblock body %}
+{% block favico %}
+    <link rel="icon" href="{{ asset('img/maria_001.ico') }}">
+{% endblock %}

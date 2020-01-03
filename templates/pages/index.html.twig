@@ -1,7 +1,12 @@
 {% extends "base.html.twig" %}
 
+
 {% block body %}
-    <h1>Hello</h1>
+    <h1 class="text-center">
+        {% set letters = letters('Hello !') %}
+        {% include 'components/_google_letters.html.twig' %}
+
+    </h1>
 {% endblock %}
 
 
